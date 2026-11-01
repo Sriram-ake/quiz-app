@@ -1,0 +1,12 @@
+{
+  "name": "10-quiz-app",
+  "version": "1.0.0",
+  "description": "QuizMaster Pro Engineering Challenge featuring timed questions, instant architectural explanations, score grades, and in-depth answer reviews",
+  "main": "js/quizEngine.js",
+  "scripts": {
+    "test": "node --test test/quizEngine.test.js"
+  },
+  "keywords": ["quiz-app", "education", "engineering", "challenge", "vanilla-js"],
+  "author": "Antigravity Engineer",
+  "license": "MIT"
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizMaster Pro | Senior Engineering Challenge</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text x='50' y='68' font-family='sans-serif' font-size='50' font-weight='bold' fill='%2338bdf8' text-anchor='middle'>?</text></svg>">
+</head>
+<body>
+  <div class="quiz-container">
+    
+    <!-- Top Quiz Header -->
+    <header class="quiz-header">
+      <div class="brand">
+        <span class="brand-crest">🎓</span>
+        <div>
+          <h1 class="brand-title">QuizMaster Pro</h1>
+          <p class="brand-sub">Senior Software Engineering Challenge</p>
+        </div>
+      </div>
+
+      <!-- Category Filter Dropdown -->
+      <div class="category-filter">
+        <label for="categorySelect" class="sr-only">Topic Category</label>
+        <select id="categorySelect" class="select-category">
+          <option value="all">All Topics (Comprehensive)</option>
+          <option value="Web Architecture">Web Architecture</option>
+          <option value="Databases & Systems">Databases & Systems</option>
+          <option value="Security & Cloud">Security & Cloud</option>
+          <option value="JavaScript Core">JavaScript Core</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Quiz Arena View (Active Game) -->
+    <main id="quizArena" class="quiz-arena">
+      
+      <!-- Progress Bar & Timer Header -->
+      <div class="status-strip">
+        <div class="progress-meta">
+          <span id="questionCategory" class="badge-cat">Web Architecture</span>
+          <span id="questionProgress" class="progress-text">Question 1 of 5</span>
+        </div>
+        <div class="timer-badge">
+          <span class="timer-icon">⏱️</span>
+          <span id="timerSeconds">20</span>s
+        </div>
+      </div>
+
+      <div class="timer-bar-track">
+        <div id="timerBar" class="timer-bar-fill"></div>
+      </div>
+
+      <!-- Question Card -->
+      <section class="question-card" aria-live="polite">
+        <h2 id="questionPrompt" class="question-prompt">Loading question...</h2>
+
+        <!-- 4 Multiple Choice Options -->
+        <div id="optionsList" class="options-grid" role="radiogroup" aria-label="Answer options">
+          <!-- Populated dynamically -->
+        </div>
+
+        <!-- Explanation Card (Shown after answering) -->
+        <div id="explanationBox" class="explanation-box hidden" role="note">
+          <div class="exp-header">
+            <span class="exp-icon">💡</span>
+            <span class="exp-title">Architectural Insight</span>
+          </div>
+          <p id="explanationText" class="exp-text"></p>
+        </div>
+
+        <!-- Progression Action Bar -->
+        <div class="action-bar">
+          <button id="nextQuestionBtn" class="btn-primary hidden">Next Question ›</button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Results & Review View (End of Quiz) -->
+    <section id="resultsArena" class="results-arena hidden" aria-label="Quiz completion results">
+      <div class="results-card">
+        <div class="results-score-badge">
+          <span id="scorePercent" class="score-percent">80%</span>
+          <span id="scoreFraction" class="score-fraction">4 of 5 Correct</span>
+        </div>
+
+        <h2 id="resultsGrade" class="results-grade">Senior Engineer</h2>
+        <p class="results-msg" id="resultsMsg">Exceptional architectural and systems knowledge demonstrated.</p>
+
+        <button id="restartBtn" class="btn-primary btn-large">Retake Challenge</button>
+      </div>
+
+      <!-- Detailed Review List -->
+      <div class="review-section">
+        <h3 class="review-heading">Question-by-Question Breakdown</h3>
+        <div id="reviewList" class="review-list">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="js/quizEngine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
